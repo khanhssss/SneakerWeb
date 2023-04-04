@@ -1,0 +1,151 @@
+﻿@model PagedList.PagedList<SneakerWeb.Models.SanPham>
+@using PagedList.Mvc;
+@using SneakerWeb.Models
+
+@{
+    ViewBag.Title = "SanPham";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+@helper Trucate(string input, int length)
+{
+    if (input.Length < length)
+    {
+        @input
+    }
+    else
+    {
+        @input.Substring(0, length) <Text> ..... </Text>
+    }
+}
+<h2 class="a">Sản Phẩm</h2>
+
+<table class="table" border="1">
+    <tr>
+        <th style="width:200px">Tên Sản Phẩm</th>
+        <th style="width:200px">Giá</th>
+        <th style="width:200px">Mô Tả</th>
+        <th style="width:200px">Hình Ảnh</th>
+        <th style="width:200px">Số Lượng</th>
+        <th style="width:200px">Giới tính</th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TenSanPham)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Gia)
+            </td>
+            <td>
+                @Trucate(item.MoTaSanPham, 100)
+            </td>
+            <td>
+                <img width="200" src="~/images/@item.Images" />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Soluongton)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Loai.TenLoai)
+            </td>
+            <td>
+
+                @Html.ActionLink("Sửa", "Suasanpham", new { id = item.MaSanPham }, new { @class = "button2" }) |
+                @Html.ActionLink("Chi Tiết", "Chitietsanpham", new { id = item.MaSanPham }, new { @class = "button3" }) |
+                @Html.ActionLink("Xóa", "Xoasanpham", new { id = item.MaSanPham }, new { @class = "button4" })
+            </td>
+        </tr>
+    }
+
+</table>
+<form method="get" action="Themmoisanpham">
+    <button type="submit" class="button">Thêm mới</button>
+</form>
+<div>
+    Trang @(Model.PageNumber>Model.PageCount?3:Model.PageNumber) /@Model.PageCount
+</div>
+<div class="Menutrang">
+    @Html.PagedListPager(Model, page => Url.Action("SanPham", new { page = page }))
+</div>
+
+<style>
+    .Menutrang {
+        display: inline-block;
+    }
+
+        .Menutrang a {
+            color: black;
+            float: left;
+            padding: 8px 16px;
+            text-decoration: none;
+        }
+
+            .Menutrang a.active {
+                background-color: #4CAF50;
+                color: white;
+            }
+
+            .Menutrang a:hover:not(.active) {
+                background-color: blue;
+            }
+
+    .button {
+        background-color: #4CAF50; /* Green */
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+    }
+
+    .button2 {
+        background-color: blue; /* Green */
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+    }
+
+    .button3 {
+        background-color: #0094ff; /* Green */
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+    }
+
+    .button4 {
+        background-color: red; /* Green */
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+    }
+
+    .a {
+        color: blue;
+        font: bold;
+    }
+</style>

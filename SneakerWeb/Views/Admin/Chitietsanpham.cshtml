@@ -1,0 +1,95 @@
+﻿@model SneakerWeb.Models.SanPham
+
+@{
+    ViewBag.Title = "Chitietsanpham";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2 class="a">Chi Tiết Sản Phẩm</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Tên Sản Phẩm
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenSanPham)
+        </dd>
+
+        <dt>
+            Giá Bán
+        </dt>
+
+        <dd>
+            @String.Format("{0:0,0}", Model.Gia) VNĐ
+        </dd>
+
+        <dt>
+            Mô Tả Sản Phẩm
+        </dt>
+        <dd style="width=600px; text-align:justify">
+            @Html.DisplayFor(model => model.MoTaSanPham)
+        </dd>
+        <dt>
+            Hình Ảnh
+        </dt>
+
+        <dd>
+            <img src="@Url.Content("~/images/"+  Model.Images)" />
+        </dd>
+
+        <dt>
+            Số Lượng
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Soluongton)
+        </dd>
+
+        <dt>
+            Mã Loại
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaLoai)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Sửa", "Suasanpham", new { id = Model.MaSanPham }, new { @class = "button2" }) |
+    @Html.ActionLink("Quay về", "SanPham",new { id = Model.MaSanPham}, new { @class = "button" })
+</p>
+<style>
+    .button {
+        background-color: #4CAF50; /* Green */
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+    }
+
+    .button2 {
+        background-color: blue; /* Green */
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+    }
+    .a {
+        color: blue;
+        font: bold;
+    }
+</style>

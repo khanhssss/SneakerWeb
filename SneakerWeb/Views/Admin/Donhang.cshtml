@@ -1,0 +1,63 @@
+﻿@model IEnumerable<SneakerWeb.Models.DonHang>
+
+@{
+    ViewBag.Title = "Donhang";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2 class="a">Đơn Hàng</h2>
+
+
+<table class="table">
+    <tr>
+        <th style="width:200px">Mã khách hàng</th>
+        <th style="width:200px">Thanh toán</th>
+        <<th style="width:200px">Tình trạng giao hàng</th>
+         <th style="width:200px">Ngày đặt</th>
+         <th style="width:200px">Ngày giao</th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaKhachHang)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DaThanhToan)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TinhTrangGiaoHang)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NgayDat)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NgayDiao)
+        </td>
+        <td>
+            @Html.ActionLink("Chi tiết", "ChitietdonHang", new { id=item.MaDonHang }, new { @class = "button3" }) |
+        </td>
+    </tr>
+}
+
+</table>
+<style>
+
+    .button3 {
+        background-color: #0094ff; /* Green */
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+    }
+    .a {
+        color: blue;
+        font: bold;
+    }
+</style>

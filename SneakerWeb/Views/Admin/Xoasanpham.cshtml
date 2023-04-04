@@ -1,0 +1,105 @@
+﻿@model SneakerWeb.Models.SanPham
+
+@{
+    ViewBag.Title = "Xoasanpham";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2 class="a">Xác nhận thông tin sản phẩm cần xóa</h2>
+
+<h3 class="b">Bạn quyết định xóa sản phẩm này ?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Tên Sản Phẩm
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenSanPham)
+        </dd>
+
+        <dt>
+            Giá Bán
+        </dt>
+
+        <dd>
+            @String.Format("{0:0,0}", Model.Gia) VNĐ
+        </dd>
+
+        <dt>
+            Mô Tả Sản Phẩm
+        </dt>
+        <dd style="width=600px; text-align:justify">
+            @Html.DisplayFor(model => model.MoTaSanPham)
+        </dd>
+        <dt>
+            Hình Ảnh
+        </dt>
+
+        <dd>
+            <img src="@Url.Content("~/images/"+  Model.Images)" />
+        </dd>
+
+        <dt>
+            Số Lượng
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Soluongton)
+        </dd>
+
+        <dt>
+            Mã Loại
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaLoai)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+<div class="form-actions no-color">
+    <input type="submit" value="Xóa" class="button4" /> |
+    @Html.ActionLink("Quay về", "SanPham", new { id = Model.MaSanPham }, new { @class = "button" })
+</div>
+    }
+</div>
+<style>
+    .button {
+        background-color: #4CAF50; /* Green */
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+    }
+    .button4 {
+        background-color: red; /* Green */
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+    }
+    .a {
+        color: blue;
+        font: bold;
+    }
+    .b {
+        color: red;
+        font: bold;
+    }
+</style>

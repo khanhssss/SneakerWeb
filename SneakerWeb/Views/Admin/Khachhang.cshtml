@@ -1,0 +1,50 @@
+﻿@model IEnumerable<SneakerWeb.Models.KhachHang>
+
+@{
+    ViewBag.Title = "Khachhang";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2 class="a">Khách Hàng</h2>
+
+
+<table class="table">
+    <tr>
+        <th style="width:200px">Tên Đăng Nhập</th>
+        <th style="width:200px">Họ Tên</th>
+        <th style="width:200px">Địa Chỉ</th>
+        <th style="width:200px">Số điện thoại</th>
+        <th style="width:200px">Email</th>
+        <th style="width:200px">Ngày Sinh</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenDangNhap)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HoTen)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DiaChi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SDT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NgaySinh)
+        </td>
+    </tr>
+}
+
+</table>
+<style>
+    .a {
+        color: blue;
+        font: bold;
+    }
+</style>

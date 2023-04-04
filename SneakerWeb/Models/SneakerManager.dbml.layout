@@ -45,14 +45,14 @@
         <classShapeMoniker Id="82445ccb-4ad9-4c8b-9a7c-2c03a4e74440" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 5.98159912109375); (3.5 : 5.98159912109375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.75 : 5.98159912109375); (3.5 : 5.98159912109375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/SneakerManagerDataContext/KhachHang/KhachHang_DonHang" />
       <nodes>
         <classShapeMoniker Id="ff5b5d02-9b58-405d-a7b0-c89986b346d6" />
         <classShapeMoniker Id="e976f613-c3c9-444e-81f4-d766b416f2f9" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 2.03929768880208); (6.25 : 2.03929768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.5 : 2.48484537760417); (6.25 : 2.48484537760417)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/SneakerManagerDataContext/SanPham/SanPham_ChiTietDonHang" />
       <nodes>
         <classShapeMoniker Id="59a7daf9-1a69-4918-b85b-675ec665ee90" />
@@ -66,5 +66,11 @@
         <classShapeMoniker Id="59a7daf9-1a69-4918-b85b-675ec665ee90" />
       </nodes>
     </associationConnector>
+    <classShape Id="2c1e9ce1-4bbe-4a88-b2d7-060c5d4091c4" absoluteBounds="0.875, 2.875, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/SneakerManagerDataContext/Admin" />
+      <nestedChildShapes>
+        <elementListCompartment Id="25ac756e-8432-4863-beac-b4f6c09d6f3e" absoluteBounds="0.88999999999999968, 3.335, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
   </nestedChildShapes>
 </ordesignerObjectsDiagram>
