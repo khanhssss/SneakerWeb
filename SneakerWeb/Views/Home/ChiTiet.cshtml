@@ -1,0 +1,210 @@
+﻿@using SneakerWeb.Models;
+
+@{
+    ViewBag.Title = "ChiTiet";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<div class="product_image_area">
+    <div class="container">
+        <div class="row s_product_inner">
+            <div class="col-lg-6">
+                <a href="@Url.Action("ChiTiet","Home",new { id=Model.MaSanPham})" class="prod-img">
+                    <img src="~/images/@Model.Images" class="img-fluid" />
+            </div>
+            <div class="col-lg-5 offset-lg-1">
+                <div class="s_product_text">
+                    <h3 style="font-weight: bold; font-size: 26px; line-height: 24px;"> @Model.TenSanPham</h3>
+                    <h2 style="font-size: 24px; text-transform: none; letter-spacing: 0">@String.Format("{0:0,0}", Model.Gia)<u>đ</u></h2>
+
+                    <p style="text-align:justify"><Span style="font-size: 16px; line-height: 22px; margin-bottom: 16px"> @Model.MoTaSanPham</Span></p>
+                    <div class="product-form product-size">
+                        <div class="row">
+                            <label class="font-weight-bold text-uppercase h6 mb-2 d-block col-12">Size Giày</label>
+                            <div class="col-12">
+                                <ul class="wapper_cb size d-flex flex-wrap justify-content-center justify-content-lg-start">
+                                    <li class="cb">
+                                        <label for="radio72300">
+                                            <input type="radio" data-id="2300" value="2300" id="radio72300" name="radio7" class="radio" checked="">
+                                            <divv class="rd_in">38</divv>
+                                        </label>
+                                    </li>
+                                    <li class="cb">
+                                        <label for="radio72299">
+                                            <input type="radio" data-id="2299" value="2299" id="radio72299" name="radio7" class="radio">
+                                            <divv class="rd_in">39</divv>
+                                        </label>
+                                    </li>
+                                    <li class="cb">
+                                        <label for="radio72297">
+                                            <input type="radio" data-id="2297" value="2297" id="radio72297" name="radio7" class="radio">
+                                            <divv class="rd_in">40</divv>
+                                        </label>
+                                    </li>
+                                    <li class="cb">
+                                        <label for="radio72295">
+                                            <input type="radio" data-id="2295" value="2295" id="radio72295" name="radio7" class="radio">
+                                            <divv class="rd_in">41</divv>
+                                        </label>
+                                    </li>
+                                    <li class="cb">
+                                        <label for="radio72294">
+                                            <input type="radio" data-id="2294" value="2294" id="radio72294" name="radio7" class="radio">
+                                            <divv class="rd_in">42</divv>
+                                        </label>
+                                    </li>
+                                    <li class="cb">
+                                        <label for="radio72293">
+                                            <input type="radio" data-id="2293" value="2293" id="radio72293" name="radio7" class="radio">
+                                            <divv class="rd_in">43</divv>
+                                        </label>
+                                    </li>
+                                    <li class="cb">
+                                        <label for="radio72292">
+                                            <input type="radio" data-id="2292" value="2292" id="radio72292" name="radio7" class="radio">
+                                            <divv class="rd_in">44</divv>
+                                        </label>
+                                    </li>
+
+                                    <divv class="clear"></divv>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card_area d-flex align-items-center">
+                        <a href="@Url.Action("ThemGiohang", "GioHang", new { @iMaSanPham= @Model.MaSanPham, @strURL=Request.Url.ToString() })" class="list-group-item">
+                            ĐẶT MUA
+                        </a>
+                        <a class="icon_btn" href="#"><i class="lnr lnr lnr-diamond"></i></a>
+                        <a class="icon_btn" href="#"><i class="lnr lnr lnr-heart"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+
+    img {
+        vertical-align: middle;
+        border-style: none;
+    }
+
+    .product_image_area {
+        padding-top: 120px;
+    }
+
+    .s_product_text .card_area .primary-btn {
+        line-height: 38px;
+        padding: 0 38px;
+        text-transform: uppercase;
+        margin-right: 10px;
+        border-radius: 5px;
+    }
+
+    .list-group-item {
+        background: linear-gradient( 90deg,#ffba00 0%,#ff6c00 100%);
+        position: relative;
+        overflow: hidden;
+        transition: all .3s ease 0s;
+    }
+
+    a.list-group-item, button.list-group-item {
+        color: #ffffff;
+    }
+
+    ul.wapper_cb.size > li.cb label input.radio:empty ~ .rd_in {
+        line-height: 1.5em;
+        text-align: center;
+        font-size: 1.2rem;
+        padding: 5px 10px;
+        margin: 0 5px 0 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: auto;
+        background-color: #fff;
+        border: 1px solid;
+        box-shadow: inset 0 0 0 2px #fff;
+        height: 40px;
+        border-radius: 2px;
+        background: #ffffff;
+        position: relative;
+        float: left;
+        cursor: pointer;
+        -webkit-user-select: none;
+        height: 40px;
+        width: 45px;
+        background: #ffffff;
+        color: #333;
+        border-radius: 2px;
+        -moz-border-radius: 2px;
+        -webkit-border-radius: 2px;
+        border: 1px solid #ccc;
+    }
+
+    ul.wapper_cb.size > li.cb label input.radio:checked ~ .rd_in:before {
+        display: none;
+    }
+
+    ul.wapper_cb.size > li.cb label input.radio:checked ~ .rd_in:before {
+        display: none;
+    }
+
+    ul.wapper_cb > li.cb label input.radio:checked ~ .rd_in::before {
+        content: "âœ“";
+        color: rgb(255, 255, 255);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        font-size: 2.4rem;
+        text-shadow: rgba(0, 0, 0, 0.6) 0px 0px 5px;
+        line-height: 1.5em;
+        transform: translate(-50%, -50%);
+    }
+
+    ul.wapper_cb > li.cb label input.radio:checked ~ .rd_in:before {
+        content: '\2714';
+        color: #fff;
+        position: absolute;
+        top: 10px;
+        left: 15px;
+        text-shadow: 0px 0px 5px rgb(0 0 0 / 60%);
+    }
+
+    *, ::after, ::before {
+        box-sizing: border-box;
+    }
+
+    *, ::after, ::before {
+        box-sizing: border-box;
+    }
+
+    .size-color {
+        border-top: 1px solid #f1f1f1;
+        border-bottom: 1px solid #f1f1f1;
+        padding: 15px 0;
+        margin: 15px 0;
+    }
+
+    li {
+        text-align: match-parent;
+    }
+
+    ul.wapper_cb {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    user agent stylesheet
+    ul {
+        list-style-type: disc;
+    }
+</style>

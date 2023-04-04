@@ -1,0 +1,49 @@
+﻿@model IEnumerable<SneakerWeb.Models.SanPham>
+
+@{
+    ViewBag.Title = "MEN";
+    Layout = "~/Views/Shared/_LayoutMen.cshtml";
+}
+
+
+<div class="colorlib-product">
+    <zzzz>
+        <img src="~/images/mentitle.jpg" style="max-width:100%">
+    </zzzz>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8 offset-sm-2 text-center colorlib-heading">
+                <h2>Sneaker Men</h2>
+            </div>
+        </div>
+        @foreach (var item in Model)
+        {
+
+            <div class="col-lg-3 mb-4 text-center">
+                <div class="product-entry border">
+                    <a href="@Url.Action("ChiTiet","Home",new { id=item.MaSanPham})" class="prod-img">
+                        <img src="~/images/@item.Images" width="180" class="img-fluid" />
+                    </a>
+                    <a href="#">
+                        @Html.DisplayFor(modelItem => item.TenSanPham)
+                    </a>
+
+                    <div class="desc">
+                        <span class="price">
+                            @String.Format("{0:0,0}", item.Gia)<u>đ</u>
+                        </span>
+
+                    </div>
+                </div>
+            </div>
+
+        }
+    </div>
+</div>
+<style>
+    zzzz {
+        display: block;
+        text-align: center;
+    }
+</style>
+

@@ -1,0 +1,234 @@
+﻿
+<!DOCTYPE html>
+
+<html>
+<head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+
+    <title>@ViewBag.Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Rokkitt:100,300,400,700" rel="stylesheet">
+
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="~/Content/animate.css">
+    <!-- Icomoon Icon Fonts-->
+    <link rel="stylesheet" href="~/Content/icomoon.css">
+    <!-- Ion Icon Fonts-->
+    <link rel="stylesheet" href="~/Content/ionicons.min.css">
+    <!-- Bootstrap  -->
+    <link rel="stylesheet" href="~/Content/bootstrap.min.css">
+
+    <!-- Magnific Popup -->
+    <link rel="stylesheet" href="~/Content/magnific-popup.css">
+
+    <!-- Flexslider  -->
+    <link rel="stylesheet" href="~/Content/flexslider.css">
+
+    <!-- Owl Carousel -->
+    <link rel="stylesheet" href="~/Content/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/Content/owl.theme.default.min.css">
+
+    <!-- Date Picker -->
+    <link rel="stylesheet" href="~/Content/bootstrap-datepicker.css">
+    <!-- Flaticons  -->
+    <link rel="stylesheet" href="~/fonts/flaticon/font/flaticon.css">
+
+    <!-- Theme style  -->
+    <link rel="stylesheet" href="~/Content/style.css">
+</head>
+<div id="page">
+    <nav class="colorlib-nav" role="navigation">
+        <div class="top-menu">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-7 col-md-9">
+                        <div id="colorlib-logo"><a href="~/Home/Index"><img src="~/images/images/logoimage.png"></a></div>
+                    </div>
+                    <div class="col-sm-5 col-md-3">
+                        <form action="#" class="search-wrap">
+                            <div class="form-group">
+                                <input type="search" class="form-control search" placeholder="Search">
+                                <button class="btn btn-primary submit-search text-center" type="submit"><i class="icon-search"></i></button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 text-left menu-1">
+                        <ul>
+                            <li><a href="~/Home/Index">Home</a></li>
+                            <li><a href="~/Home/SPMEN/1">Men</a></li>
+                            <li><a href="~/Home/SPWOMEN/2">Women</a></li>
+                            <li><a href="~//SizeChart/SizeChart">SizeChart</a></li>
+                            <li><a href="~/Contact/contact">Contact</a></li>
+                            <li><a href="~/Home/Phanhoi">Feedback</a></li>
+                            <li><a href="~/User/Dangky">Đăng Ký</a></li>
+                            <li><a href="~/User/Dangnhap">Đăng Nhập</a></li>
+
+
+                            <li>
+                                @Html.Action("GiohangPartial", "Giohang")
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+</div>
+<body>
+    <div>
+        @RenderBody()
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <div class="gototop js-top">
+        <a href="#" class="js-gotop"><i class="ion-ios-arrow-up"></i></a>
+    </div>
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v11.0" nonce="aSXx2Gnk"></script>
+    <!-- jQuery -->
+    <script src="~/Scripts/jquery.min.js"></script>
+    <!-- popper -->
+    <script src="~/Scripts/popper.min.js"></script>
+    <!-- bootstrap 4.1 -->
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <!-- jQuery easing -->
+    <script src="~/Scripts/jquery.easing.1.3.js"></script>
+    <!-- Waypoints -->
+    <script src="~/Scripts/jquery.waypoints.min.js"></script>
+    <!-- Flexslider -->
+    <script src="~/Scripts/jquery.flexslider-min.js"></script>
+    <!-- Owl carousel -->
+    <script src="~/Scripts/owl.carousel.min.js"></script>
+    <!-- Magnific Popup -->
+    <script src="~/Scripts/jquery.magnific-popup.min.js"></script>
+    <script src="~/Scripts/magnific-popup-options.js"></script>
+    <!-- Date Picker -->
+    <script src="~/Scripts/bootstrap-datepicker.js"></script>
+    <!-- Stellar Parallax -->
+    <script src="~/Scripts/jquery.stellar.min.js"></script>
+    <!-- Main -->
+    <script src="~/Scripts/main.js"></script>
+
+</body>
+<footer style="background: #000000; border-top: 1px solid #addef0;">
+    <div class="footer-center">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 pd5">
+                    <div class="box-footer-colum">
+                        <h3 class="">Liên hệ</h3>
+                        <ul class="footer-list-menu">
+                            <li class="footer-address">3 Đường số 182 Tăng Nhơn Phú A Quận 9 Thành phố Thủ Đức</li>
+                            <li class="fooer-phone">
+                                <label class="mr5">Phone: </label><span>0334620090</span>
+                            </li>
+                            <li class="footer-email">
+                                <label class="mr5">Email: </label><span>chientran14580@gmail.com</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+
+
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 pd5">
+                    <div class="box-footer-colum">
+                        <h3 class="">Liên kết</h3>
+                        <div class="social">
+                            <ul class="footer-list-menu">
+                                <li>Hãy kết nối với chúng tôi.</li>
+                            </ul>
+                            <ul class="list-unstyled clearfix" style="width:345px; height:38px">
+
+                                <li>
+                                    <a href="https://www.facebook.com/chienmintran25" target="_Blank">
+                                        <img src="https://img.icons8.com/doodle/96/000000/facebook-new.png" />
+                                    </a>
+
+                                    <a href="https://www.instagram.com/chienmintran/" target="_Blank">
+                                        <img src="https://img.icons8.com/plasticine/100/000000/instagram-new--v2.png" />
+                                    </a>
+                                </li>
+
+
+
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 pd5">
+                    <div class="box-footer-colum">
+                        <h3 class="">Đăng ký nhận thông tin từ cửa hàng</h3>
+                        <div class="fb-xfbml-parse-ignore" data-href="https://www.facebook.com/chienmintran25" data-tabs="timeline" data-width="250" data-height="130" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/chienmintran25" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/chienmintran25">DKCsneaker</a></blockquote></div>
+                    </div>
+                </div>
+
+
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 pd5">
+                    <div class="box-footer-colum">
+                        <h3 class="">Bản Đồ</h3>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.638193514602!2d106.79124511474956!3d10.838975592279114!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752717f064948f%3A0x3e14595907399939!2zMyDEkMaw4budbmcgc-G7kSAxODIsIFTEg25nIE5oxqFuIFBow7ogQSwgUXXhuq1uIDksIFRow6BuaCBwaOG7kSBI4buTIENow60gTWluaCwgVmnhu4d0IE5hbQ!5e0!3m2!1svi!2s!4v1626166633640!5m2!1svi!2s" width="300" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<style>
+    ul, li, p {
+        margin: 0px;
+        padding: 0px;
+    }
+
+    p {
+        display: block;
+        margin-block-start: 1em;
+        margin-block-end: 1em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+    }
+
+    .box-footer-colum h3 {
+        font-size: 16px;
+        padding-bottom: 10px;
+        margin: 10px 0;
+        font-weight: bold;
+        text-transform: uppercase;
+        color: #ffa200;
+        position: relative;
+    }
+
+    .box-footer-colum .footer-list-menu li {
+        color: #fff;
+        opacity: 0.75;
+        padding: 5px 0;
+    }
+
+    .box-footer-colum h3:after {
+        content: "";
+        height: 2px;
+        width: 40px;
+        background: #ffffff;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+    }
+</style>
+<html>
